@@ -249,3 +249,25 @@ python train/train_lenet5_mnist.py
 
 # 在自建数据集上训练
 python train/train_lenet5_custom.py
+```
+---
+训练完成后，项目根目录会生成对应的模型权重文件：
+lenet5_mnist.pth（MNIST 版，准确率很高，某次训练后准确率为 98.86%）
+lenet5_custom.pth（自建版，准确率不高，某次训练后准确率 86.00%）
+
+### DCGAN 训练
+```bash
+# 在 MNIST 上训练
+python train/train_dcgan_mnist.py
+
+# 在自建数据集上训练
+python train/train_dcgan_custom.py
+```
+---
+CGAN 训练时间较长（约 30 个 epoch），过程中会每 epoch 保存一张生成示例图，训练结束后保存生成器和判别器权重：
+
+dcgan_generator.pth / dcgan_discriminator.pth（MNIST 版）
+
+dcgan_custom_generator.pth / dcgan_custom_discriminator.pth（自建版）
+
+💡 如果想跳过训练直接测试，可使用仓库中预置的权重文件（*.pth）。
