@@ -78,3 +78,22 @@ LeNet-5-and-DCGAN/
 ```bash
 conda create -n pytorch_env python=3.9 -y
 conda activate pytorch_env
+```
+---
+
+## 📦 数据集准备
+
+本项目使用两种数据集：**MNIST 公开数据集**和**自建合成手写数字数据集**。
+
+---
+
+## 🏃 训练模型
+
+### LeNet-5 训练
+
+```bash
+# 在 MNIST 上训练
+python train/train_lenet5_mnist.py
+
+# 在自建数据集上训练
+python train/train_lenet5_custom.py
