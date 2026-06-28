@@ -102,7 +102,7 @@ conda activate pytorch_env
 ```bash
 python train/train_lenet5_mnist.py
 
-若是遇到ssl连接失败问题可以到清华镜像源网站下载
+```若是遇到ssl连接失败问题可以到清华镜像源网站下载
 ```
 ---
 
