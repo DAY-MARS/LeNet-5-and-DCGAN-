@@ -61,6 +61,9 @@ LeNet-5-and-DCGAN/
 - CPU：Intel Core i7-13700H 或同等性能
 - 内存：16 GB 及以上
 
+---
+
+
 ### 软件环境
 - 操作系统：Windows 11（Linux / macOS 亦可，只需调整对应命令）
 - Python：**3.9.x**（推荐 3.9.25）
