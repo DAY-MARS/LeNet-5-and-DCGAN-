@@ -271,3 +271,44 @@ dcgan_generator.pth / dcgan_discriminator.pth（MNIST 版）
 dcgan_custom_generator.pth / dcgan_custom_discriminator.pth（自建版）
 
 💡 如果想跳过训练直接测试，可使用仓库中预置的权重文件（*.pth）。
+
+## 🔍 评估与可视化
+
+### LeNet-5 单模型测试
+```bash
+# 在 MNIST 上测试
+python evaluate/test_lenet5_mnist.py
+
+# 在自建数据集上测试
+python evaluate/test_lenet5_custom.py
+```
+---
+每个脚本会随机抽取 12 张测试图像，用训练好的模型进行预测，并显示预测结果（绿色=正确，红色=错误），同时保存为 PNG 图片。
+
+### DCGAN 生成图片
+```bash
+# 用 MNIST 版 DCGAN 生成 64 张图片
+python evaluate/generate_gan_images.py
+
+# 用自建版 DCGAN 生成 64 张图片
+python evaluate/generate_gan_images_custom.py
+```
+---
+生成的图片分别保存在 dcgan_generated_mnist/ 和 dcgan_generated/ 目录中。
+
+## 🔗 核心联动：用 LeNet-5 识别 DCGAN 生成的图片
+这是本项目最有特色的实验：让 LeNet-5 去“认一认”DCGAN 凭空画出来的数字。
+```bash
+# 自建版联动：自建 DCGAN 生成 → 自建 LeNet-5 识别
+python evaluate/recognize_gan_custom.py
+
+# MNIST 版联动：MNIST DCGAN 生成 → MNIST LeNet-5 识别
+python evaluate/recognize_gan_mnist.py
+```
+---
+每个脚本会输出每张生成图片的识别数字和置信度，并保存可视化结果图。
+
+| 联动版本 | DCGAN 训练数据 | LeNet-5 训练数据 | 识别效果 |
+|---------|---------------|----------------|---------|
+| MNIST 版 | MNIST | MNIST | 多数以高置信度正确识别 |
+| 自建版 | 自建数据集 | 自建数据集 | 置信度偏低，误判较多 |
