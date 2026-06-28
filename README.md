@@ -123,6 +123,19 @@ https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
 
 https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
 
+## 1. 放置数据文件
+
+将四个压缩包放入 `./data/MNIST/raw/` 文件夹，最终目录结构应如下：
+
+```text
+data/
+└── MNIST/
+    └── raw/
+        ├── train-images-idx3-ubyte.gz
+        ├── train-labels-idx1-ubyte.gz
+        ├── t10k-images-idx3-ubyte
+
+
 ```
 ---
 
