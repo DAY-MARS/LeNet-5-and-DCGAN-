@@ -230,6 +230,15 @@ Grayscale(num_output_channels=1)：关键步骤！自建图片虽是灰度图，
 
 Normalize((0.5,), (0.5,))：将 [0,1] 映射至 [-1,1]，与 LeNet-5 的 Tanh 激活函数输出范围及 DCGAN 生成器的 Tanh 输出层保持一致
 
+#### DCGAN 预处理（两个数据集统一）
+```python
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))            # 匹配 Tanh 输出范围 [-1, 1]
+])
+```
+---
+DCGAN 的生成器输出层使用 Tanh 激活函数（输出范围 [-1, 1]），因此真实图像也需归一化到相同范围，以便判别器进行对比。
 ## 🏃 训练模型
 
 ### LeNet-5 训练
