@@ -54,15 +54,14 @@ LeNet-5-and-DCGAN/
     ├── show_mnist_samples.py       # MNIST 样本展示
     └── show_custom_samples.py      # 自建数据集样本展示
 
+---
+
 ## ⚙️ 环境配置
 
 ### 硬件要求
 - GPU：NVIDIA 显卡（推荐，至少 4 GB 显存），本项目使用 **NVIDIA GeForce RTX 4050 (6 GB)**
 - CPU：Intel Core i7-13700H 或同等性能
 - 内存：16 GB 及以上
-
----
-
 
 ### 软件环境
 - 操作系统：Windows 11（Linux / macOS 亦可，只需调整对应命令）
