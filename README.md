@@ -123,7 +123,7 @@ https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
 
 https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
 （目前网址已失效，但是MNIST训练集容易寻找，请读者自行在网上查询）
-#### 1. 放置数据文件
+#### （1）放置数据文件
 
 将四个压缩包放入 `./data/MNIST/raw/` 文件夹，最终目录结构应如下：
 
@@ -135,7 +135,7 @@ data/
         ├── train-labels-idx1-ubyte.gz
         ├── t10k-images-idx3-ubyte
 ```
- #### 2.修改训练脚本
+ #### （2）修改训练脚本
  
 将数据集加载代码中的 download=True 改为 download=False，以使用本地文件，示例如下：
 ```python
@@ -146,7 +146,35 @@ test_dataset  = datasets.MNIST(root='./data', train=False, download=False, trans
 若 S3 源也出现连接问题，可尝试在代码中临时关闭 SSL 验证：
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
-    
+
+### 2. 自建合成手写数字数据集数据集
+
+| 属性 | 说明 |
+|:---|:---|
+| 来源 | Windows 系统字体程序化合成 |
+| 规模 |5,000 张（每类 500 张）|
+| 尺寸 |32×32 灰度图 |
+| 类别 | 0–9 共 10 类 |
+| 生成方式 |Python PIL 库随机变换字体、字号、偏移、旋转 |
+---
+
+#### 生成流程
+
+1.随机选取一款系统字体
+
+2.在 32×32 白底画布上绘制数字
+
+3.施加随机偏移和旋转
+
+4.保存为 PNG 灰度图
+
+#### 生成命令
+```bash
+# 标准版（常规笔画粗细）
+python data/generate_dataset.py
+
+# 加粗版（笔画更粗，优先使用此版本以获得更好的训练效果）
+python data/generate_dataset_bold.py
 ```
 ---
 
