@@ -102,6 +102,7 @@ conda activate pytorch_env
 ```bash
 python train/train_lenet5_mnist.py
 
+```
 #### 手动下载（网络受限或 SSL 错误时使用）
 
 若是ssl连接
