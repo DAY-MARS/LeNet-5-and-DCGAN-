@@ -207,14 +207,13 @@ transform = transforms.Compose([
 ```
 ---
 #### 参数说明
-```text
+
 0.1307：MNIST 训练集全局均值
 
 0.3081：MNIST 训练集全局标准差
 
 标准化后数据分布接近标准正态分布，有助于加速 SGD 收敛
-```
----
+
 #### 自建数据集预处理
 ```python
 transform = transforms.Compose([
@@ -226,12 +225,11 @@ transform = transforms.Compose([
 ```
 ---
 #### 参数说明
-```text
+text
 Grayscale(num_output_channels=1)：关键步骤！自建图片虽是灰度图，但 ImageFolder 默认转换为 RGB 三通道，必须显式转回单通道，否则卷积层输入通道数不匹配
 
 Normalize((0.5,), (0.5,))：将 [0,1] 映射至 [-1,1]，与 LeNet-5 的 Tanh 激活函数输出范围及 DCGAN 生成器的 Tanh 输出层保持一致
-```
----
+
 ## 🏃 训练模型
 
 ### LeNet-5 训练
