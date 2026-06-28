@@ -101,6 +101,7 @@ conda activate pytorch_env
 
 ```bash
 python train/train_lenet5_mnist.py
+```
 
 ---
 
