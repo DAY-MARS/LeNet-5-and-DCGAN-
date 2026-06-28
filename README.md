@@ -105,22 +105,21 @@ python train/train_lenet5_mnist.py
 ```
 #### 手动下载（网络受限或 SSL 错误时使用）
 
-若是ssl连接
 在实际配置过程中，曾遇到以下问题：
+- 直接连接 Yann LeCun 官网时出现 **SSL 证书验证失败** 错误
+- 清华大学 TUNA 镜像的部分 MNIST 链接也已失效
 
-直接连接 Yann LeCun 官网时出现 SSL 证书验证失败 错误
+**解决方案**：从 PyTorch 官方的 Amazon S3 备份源手动下载，该源在国内大部分地区可正常访问。
 
-清华大学 TUNA 镜像的部分 MNIST 链接也已失效
+**下载地址（S3 备份源）：**
 
-解决方案：从 PyTorch 官方的 Amazon S3 备份源手动下载，该源在国内大部分地区可正常访问，或是再从相关论坛获取资源
-
+以下四个文件必须全部下载，且**不要解压**：
+https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz
+https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz
+https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
+https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
 ```
-####下载后路径放置
-
-```bash
-./data/MNIST/raw/
-
-```
+---
 
 ## 🏃 训练模型
 
