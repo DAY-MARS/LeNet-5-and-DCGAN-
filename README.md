@@ -102,6 +102,16 @@ conda activate pytorch_env
 ```bash
 python train/train_lenet5_mnist.py
 
+#### 手动下载（网络受限或 SSL 错误时使用）
+
+若是ssl连接
+在实际配置过程中，曾遇到以下问题：
+
+直接连接 Yann LeCun 官网时出现 SSL 证书验证失败 错误
+
+清华大学 TUNA 镜像的部分 MNIST 链接也已失效
+
+解决方案：从 PyTorch 官方的 Amazon S3 备份源手动下载，该源在国内大部分地区可正常访问，或是再从相关论坛获取资源
 ```
 ---
 
