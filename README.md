@@ -93,7 +93,7 @@ conda activate pytorch_env
 | 规模 | 60,000 训练 + 10,000 测试 |
 | 尺寸 | 28×28 灰度图（Pad 至 32×32） |
 | 类别 | 0–9 共 10 类 |
-| 镜像地址 | https://mirrors.tuna.tsinghua.edu.cn/torchvision-datasets/mnist/ |
+| 镜像地址 | https://mirrors.tuna.tsinghua.edu.cn/torchvision-datasets/mnist/（已失效） |
 
 #### 自动下载
 
@@ -101,7 +101,7 @@ conda activate pytorch_env
 
 ```bash
 python train/train_lenet5_mnist.py
-```
+```若是遇到ssl连接失败问题可以到清华镜像源网站下载
 
 ---
 
