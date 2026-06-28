@@ -53,3 +53,26 @@ LeNet-5-and-DCGAN/
 └── visual/                         # 数据集可视化
     ├── show_mnist_samples.py       # MNIST 样本展示
     └── show_custom_samples.py      # 自建数据集样本展示
+
+## ⚙️ 环境配置
+
+### 硬件要求
+- GPU：NVIDIA 显卡（推荐，至少 4 GB 显存），本项目使用 **NVIDIA GeForce RTX 4050 (6 GB)**
+- CPU：Intel Core i7-13700H 或同等性能
+- 内存：16 GB 及以上
+
+### 软件环境
+- 操作系统：Windows 11（Linux / macOS 亦可，只需调整对应命令）
+- Python：**3.9.x**（推荐 3.9.25）
+- 包管理：**Miniconda** 或 Anaconda
+- 深度学习框架：**PyTorch 2.7.1 + CUDA 11.8**
+
+### 1. 安装 Miniconda（如果还没有）
+前往 [Miniconda 官网](https://docs.conda.io/en/latest/miniconda.html) 下载 Windows 版并安装。  
+安装时勾选 “Add Miniconda3 to my PATH environment variable”。
+
+### 2. 创建并激活虚拟环境
+打开终端（PowerShell 或 Git Bash），执行：
+```bash
+conda create -n pytorch_env python=3.9 -y
+conda activate pytorch_env
