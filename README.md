@@ -85,6 +85,23 @@ conda activate pytorch_env
 
 本项目使用两种数据集：**MNIST 公开数据集**和**自建合成手写数字数据集**。
 
+### 1. MNIST 数据集
+
+| 属性 | 说明 |
+|:---|:---|
+| 来源 | Yann LeCun 官网 |
+| 规模 | 60,000 训练 + 10,000 测试 |
+| 尺寸 | 28×28 灰度图（Pad 至 32×32） |
+| 类别 | 0–9 共 10 类 |
+| 镜像地址 | https://mirrors.tuna.tsinghua.edu.cn/torchvision-datasets/mnist/ |
+
+#### 自动下载
+
+运行训练脚本时，`torchvision` 会自动从官网下载 MNIST 数据集并保存在 `./data` 目录下：
+
+```bash
+python train/train_lenet5_mnist.py
+
 ---
 
 ## 🏃 训练模型
