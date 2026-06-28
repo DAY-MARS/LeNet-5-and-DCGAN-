@@ -138,10 +138,10 @@ data/
  #### 2.修改训练脚本
  
 将数据集加载代码中的 download=True 改为 download=False，以使用本地文件：
-```text
-python
+```python
 train_dataset = datasets.MNIST(root='./data', train=True, download=False, transform=transform)
 test_dataset  = datasets.MNIST(root='./data', train=False, download=False, transform=transform)
+
     
 ```
 ---
