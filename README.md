@@ -122,6 +122,7 @@ https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz
 https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
 
 https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
+
 （目前网址已失效，但是MNIST训练集容易寻找，请读者自行在网上查询）
 #### （1）放置数据文件
 
@@ -272,6 +273,17 @@ dcgan_custom_generator.pth / dcgan_custom_discriminator.pth（自建版）
 
 💡 如果想跳过训练直接测试，可使用仓库中预置的权重文件（*.pth）。
 
+### model对所有 PyTorch 网络结构的存放
+model/ 文件夹中 model/lenet5.py和dcgan.py可以直接导入，相较于在内部定义的脚本如lenet5_custom.py更有普适性，可直接导入，如：
+```python
+import sys
+sys.path.append('..')  # 使脚本能导入上层目录的 model 包
+
+import torch.optim as optim
+from model.lenet5 import LeNet5
+from data.dataset_utils import get_custom_loader
+```
+---
 ## 🔍 评估与可视化
 
 ### LeNet-5 单模型测试
