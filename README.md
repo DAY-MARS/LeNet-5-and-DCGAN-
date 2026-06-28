@@ -114,10 +114,10 @@ python train/train_lenet5_mnist.py
 **下载地址（S3 备份源）：**
 
 以下四个文件必须全部下载，且**不要解压**：
-https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz
-https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz
-https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
-https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
+|https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz|
+|https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz|
+|https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz|
+|https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz|
 
 ```
 ---
