@@ -197,11 +197,13 @@ my_digits/
 #### MNIST预处理
 ```python
 from torchvision import transforms
+from torchvision import transforms
 
 transform = transforms.Compose([
     transforms.Pad(2),                              # 28×28 → 32×32（适配 LeNet-5 输入层）
     transforms.ToTensor(),                          # [0,255] → [0,1]
     transforms.Normalize((0.1307,), (0.3081,))      # 标准化为均值 0、标准差 1
+])
 ```
 ---
 #### 参数说明
@@ -213,7 +215,23 @@ transform = transforms.Compose([
 标准化后数据分布接近标准正态分布，有助于加速 SGD 收敛
 ```
 ---
+#### 自建数据集预处理
+```python
+transform = transforms.Compose([
+    transforms.Grayscale(num_output_channels=1),    # ImageFolder 默认读为 RGB，需转回单通道
+    transforms.Resize((32, 32)),                    # 保持尺寸一致
+    transforms.ToTensor(),                          # [0,255] → [0,1]
+    transforms.Normalize((0.5,), (0.5,))            # 归一化至 [-1, 1]
+])
+```
+---
+#### 参数说明
+```text
+Grayscale(num_output_channels=1)：关键步骤！自建图片虽是灰度图，但 ImageFolder 默认转换为 RGB 三通道，必须显式转回单通道，否则卷积层输入通道数不匹配
 
+Normalize((0.5,), (0.5,))：将 [0,1] 映射至 [-1,1]，与 LeNet-5 的 Tanh 激活函数输出范围及 DCGAN 生成器的 Tanh 输出层保持一致
+```
+---
 ## 🏃 训练模型
 
 ### LeNet-5 训练
