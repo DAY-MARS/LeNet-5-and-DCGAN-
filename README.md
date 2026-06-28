@@ -113,8 +113,12 @@ python train/train_lenet5_mnist.py
 清华大学 TUNA 镜像的部分 MNIST 链接也已失效
 
 解决方案：从 PyTorch 官方的 Amazon S3 备份源手动下载，该源在国内大部分地区可正常访问，或是再从相关论坛获取资源
+
 ```
----
+
+```test
+./data/MNIST/raw/
+```
 
 ## 🏃 训练模型
 
