@@ -24,7 +24,6 @@
 LeNet-5-and-DCGAN/
 ├── README.md                       # 项目说明（运行指南、环境配置、复现步骤）
 ├── requirements.txt                # Python 依赖列表
-├── .gitignore                      # 忽略上传的文件（数据集、模型、缓存等）
 ├── LICENSE                         # MIT 许可证
 │
 ├── model/                          # 网络模型定义（可复用）
