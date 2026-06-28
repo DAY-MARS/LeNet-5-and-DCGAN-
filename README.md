@@ -134,8 +134,13 @@ data/
         ├── train-images-idx3-ubyte.gz
         ├── train-labels-idx1-ubyte.gz
         ├── t10k-images-idx3-ubyte
-
-
+```
+ #### 2.修改训练脚本
+ 
+将数据集加载代码中的 download=True 改为 download=False，以使用本地文件：
+```text
+train_dataset = datasets.MNIST(root='./data', train=True, download=False, transform=transform)
+test_dataset  = datasets.MNIST(root='./data', train=False, download=False, transform=transform)
 ```
 ---
 
