@@ -122,7 +122,7 @@ https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz
 https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
 
 https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
-
+（目前网址已失效，但是MNIST训练集容易寻找，请读者自行在网上查询）
 #### 1. 放置数据文件
 
 将四个压缩包放入 `./data/MNIST/raw/` 文件夹，最终目录结构应如下：
@@ -137,11 +137,15 @@ data/
 ```
  #### 2.修改训练脚本
  
-将数据集加载代码中的 download=True 改为 download=False，以使用本地文件：
+将数据集加载代码中的 download=True 改为 download=False，以使用本地文件，示例如下：
 ```python
 train_dataset = datasets.MNIST(root='./data', train=True, download=False, transform=transform)
 test_dataset  = datasets.MNIST(root='./data', train=False, download=False, transform=transform)
-
+```
+#### 💡 补充说明
+若 S3 源也出现连接问题，可尝试在代码中临时关闭 SSL 验证：
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
     
 ```
 ---
