@@ -177,6 +177,42 @@ python data/generate_dataset.py
 python data/generate_dataset_bold.py
 ```
 ---
+#### 输出结构目录
+```text
+my_digits/
+├── 0/        # 数字 0（500 张）
+├── 1/        # 数字 1（500 张）
+├── 2/        # 数字 2（500 张）
+├── 3/        # 数字 3（500 张）
+├── 4/        # 数字 4（500 张）
+├── 5/        # 数字 5（500 张）
+├── 6/        # 数字 6（500 张）
+├── 7/        # 数字 7（500 张）
+├── 8/        # 数字 8（500 张）
+└── 9/        # 数字 9（500 张）
+```
+---
+### 3.数据预处理
+
+#### MNIST预处理
+```python
+from torchvision import transforms
+
+transform = transforms.Compose([
+    transforms.Pad(2),                              # 28×28 → 32×32（适配 LeNet-5 输入层）
+    transforms.ToTensor(),                          # [0,255] → [0,1]
+    transforms.Normalize((0.1307,), (0.3081,))      # 标准化为均值 0、标准差 1
+```
+---
+#### 参数说明
+```text
+0.1307：MNIST 训练集全局均值
+
+0.3081：MNIST 训练集全局标准差
+
+标准化后数据分布接近标准正态分布，有助于加速 SGD 收敛
+```
+---
 
 ## 🏃 训练模型
 
